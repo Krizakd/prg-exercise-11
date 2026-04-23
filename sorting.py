@@ -25,9 +25,24 @@ def selection_sort(seznam):
         novy_seznam[hodnota], novy_seznam[nejmensi_id] = novy_seznam[nejmensi_id], novy_seznam[hodnota]
     return novy_seznam
 
+def bubble_sort(seznam):
+    novy_seznam = seznam.copy()
+    zmena =True
+    while zmena:
+        zmena=False
+
+        for i in range(len(novy_seznam)-1):
+            if novy_seznam[i+1] < novy_seznam[i]:
+                novy_seznam[i+1],novy_seznam[i] = novy_seznam[i], novy_seznam[i+1]
+                zmena = True
+    return novy_seznam
+
+
 if __name__ == "__main__":
 
-    small = random_numbers(5, low=0, high=20)
+    small = random_numbers(10, low=0, high=20)
     print(small)
     sort = selection_sort(small)
     print(sort)
+    bublinky=bubble_sort(small)
+    print(bublinky)
